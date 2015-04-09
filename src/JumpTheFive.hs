@@ -1,5 +1,3 @@
-#!/usr/bin/env runhaskell
-
 module JumpTheFive (
     encrypt,
     encrypt',
@@ -8,7 +6,6 @@ module JumpTheFive (
 
 import Data.Char (toUpper)
 import Control.Parallel.Strategies (parMap, rseq)
-import System.IO ()
 
 encrypt :: String -> String
 encrypt plaintext = parMap rseq (encrypt' . preprocess) plaintext
@@ -43,7 +40,7 @@ preprocess c
     'X' -> '9'
     'Y' -> '9'
     'Z' -> '9'
-    c -> c
+    c' -> c'
 
 encrypt' :: Char -> Char
 encrypt' '1' = '9'
@@ -57,6 +54,3 @@ encrypt' '8' = '2'
 encrypt' '9' = '1'
 encrypt' '0' = '5'
 encrypt' x = x
-
-main :: IO ()
-main = interact encrypt

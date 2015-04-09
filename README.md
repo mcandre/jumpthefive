@@ -42,7 +42,20 @@ https://github.com/mcandre/dotfiles/blob/master/.cabal/config#L24
 
 * [Ruby](https://www.ruby-lang.org/) 1.9+
 
+# INSTALL
+
+```
+$ cabal install jumpthefive
+```
+
 # DEVELOPMENT
+
+## Build
+
+```
+$ cabal update
+$ cabal install
+```
 
 ## Lint
 
