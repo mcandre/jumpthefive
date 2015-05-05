@@ -3,7 +3,7 @@
 # EXAMPLE
 
 ```
-$ cat examples/toll-free.txt 
+$ cat examples/toll-free.txt
 1-800-438-2653
 1-800-2255-288
 1-800-MYGRITS

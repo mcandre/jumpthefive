@@ -8,7 +8,7 @@ import Data.Char (toUpper)
 import Control.Parallel.Strategies (parMap, rseq)
 
 encrypt :: String -> String
-encrypt plaintext = parMap rseq (encrypt' . preprocess) plaintext
+encrypt = parMap rseq (encrypt' . preprocess)
 
 preprocess :: Char -> Char
 preprocess c
