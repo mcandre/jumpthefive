@@ -21,7 +21,7 @@ library
 
   exposed-modules: JumpTheFive
 
-  ghc-options: -Wall
+  ghc-options: -O2 -Wall -fwarn-tabs
   hs-source-dirs: src
 
 executable jumpthefive
@@ -30,5 +30,5 @@ executable jumpthefive
     parallel
 
   main-is: CLI.hs
-  ghc-options: -Wall
+  ghc-options: -O2 -Wall -fwarn-tabs
   hs-source-dirs: src
