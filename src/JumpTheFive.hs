@@ -1,3 +1,5 @@
+-- |
+-- JumpTheFive offers symmetric encryption for phone numbers.
 module JumpTheFive (
     encrypt,
     encrypt',
@@ -7,9 +9,11 @@ module JumpTheFive (
 import Data.Char (toUpper)
 import Control.Parallel.Strategies (parMap, rseq)
 
+-- | encrypt symmetrically obfuscates a phone number.
 encrypt :: String -> String
 encrypt = parMap rseq (encrypt' . preprocess)
 
+-- | preprocess handles alphabetical phone digit aliases.
 preprocess :: Char -> Char
 preprocess c
   | c `elem` ['a' .. 'z'] = (preprocess . toUpper) c
@@ -42,6 +46,7 @@ preprocess c
     'Z' -> '9'
     c' -> c'
 
+-- | encrypt' symmetrically obfuscates an individual phone digit.
 encrypt' :: Char -> Char
 encrypt' '1' = '9'
 encrypt' '2' = '8'

@@ -54,3 +54,9 @@ Keep the code tidy:
 ```console
 $ shake lint
 ```
+
+# PUBLISH
+
+```console
+$ shake publish
+```

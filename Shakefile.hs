@@ -4,6 +4,7 @@ import System.Directory as Dir
 
 main :: IO ()
 main = do
+  let tarball = "dist/jumpthefive-0.0.1.tar.gz"
   homeDir <- Dir.getHomeDirectory
 
   shakeArgs shakeOptions{ shakeFiles="dist" } $ do
@@ -21,8 +22,26 @@ main = do
     phony "install" $
       cmd_ "cabal" "install"
 
-    phony "uninstall" $
+    phony "uninstall" $ do
+      cmd_ "ghc-pkg" "unregister" "--force" "jumpthefive"
       removeFilesAfter homeDir ["/.cabal/bin/jumpthefive" <.> exe]
 
+    phony "build" $
+      cmd_ "cabal" "build"
+
+    phony "haddock" $
+      cmd_ "cabal" "haddock"
+
+    tarball %> \_ -> do
+      need ["build", "haddock"]
+      cmd_ "cabal" "sdist"
+
+    phony "sdist" $
+      need [tarball]
+
+    phony "publish" $ do
+      need ["sdist"]
+      cmd_ "cabal" "upload" tarball
+
     phony "clean" $
-      removeFilesAfter "dist" ["//*"]
+      cmd_ "cabal" "clean"
