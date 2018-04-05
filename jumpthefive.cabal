@@ -16,8 +16,8 @@ source-repository head
 
 library
   build-depends:
-    base              >= 4.3.1.0 && <5,
-    parallel          >= 3.2.0.3 && <4
+    base              >= 4.3.1.0 && < 5,
+    parallel          >= 3.2.0.3 && < 4
 
   exposed-modules: JumpTheFive
 
@@ -27,7 +27,7 @@ library
 executable jumpthefive
   build-depends:
     base              >= 4.3.1.0 && < 5,
-    parallel          >= 3.2.0.3 && <4
+    parallel          >= 3.2.0.3 && < 4
 
   main-is: CLI.hs
   ghc-options: -O2 -Wall -fwarn-tabs
