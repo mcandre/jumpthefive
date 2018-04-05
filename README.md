@@ -43,6 +43,7 @@ http://hackage.haskell.org/package/jumpthefive
 # BUILD
 
 ```console
+$ cabal install --only-dependencies --enable-tests
 $ shake
 ```
 
