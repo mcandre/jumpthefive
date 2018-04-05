@@ -23,7 +23,7 @@ $ jumpthefive < examples/toll-free.txt | jumpthefive
 
 Watch [The Wire S01E05: The Pager](http://www.imdb.com/title/tt0749450/?ref_=ttep_ep5)
 
-# HACKAGE
+# DOCUMENTATION
 
 http://hackage.haskell.org/package/jumpthefive
 
