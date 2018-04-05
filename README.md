@@ -2,13 +2,13 @@
 
 # EXAMPLE
 
-```
+```console
 $ cat examples/toll-free.txt
 1-800-438-2653
 1-800-2255-288
 1-800-MYGRITS
 
-$ jumpthefive < examples/toll-free.txt 
+$ jumpthefive < examples/toll-free.txt
 9-255-672-8407
 9-255-8800-822
 9-255-4163623
@@ -27,43 +27,28 @@ Watch [The Wire S01E05: The Pager](http://www.imdb.com/title/tt0749450/?ref_=tte
 
 http://hackage.haskell.org/package/jumpthefive
 
-# REQUIREMENTS
+# RUNTIME REQUIREMENTS
+
+(None)
+
+# BUILDTIME REQUIREMENTS
 
 * [Haskell](http://www.haskell.org/)
-* [parallel](http://hackage.haskell.org/package/parallel)
 
-Install parallel with `cabal install -p parallel`.
+## Recommended
 
-Recommend configuring cabal to default to profiled libraries:
+* [shake](https://shakebuild.com/) (e.g., `cabal install shake`)
 
-https://github.com/mcandre/dotfiles/blob/master/.cabal/config#L24
+# BUILD
 
-## OPTIONAL
-
-* [Ruby](https://www.ruby-lang.org/) 1.9+
-
-# INSTALL
-
-```
-$ cabal install jumpthefive
+```console
+$ shake
 ```
 
-# DEVELOPMENT
-
-## Build
-
-```
-$ cabal update
-$ cabal install
-```
-
-## Lint
+# LINT
 
 Keep the code tidy:
 
-```
-$ cabal install hlint
-$ hlint .
-$ bundle install
-$ lili .
+```console
+$ shake lint
 ```
